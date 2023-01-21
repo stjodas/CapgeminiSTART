@@ -1,0 +1,33 @@
+package Heranca;
+
+//Herança
+//extends o Vendedor passa  a ter todos os atributos e metodos de funcionario
+public class Vendedor extends Funcionario {
+
+    private int totalItensVendidos;
+    private float comissaoPorItem;
+
+    public Vendedor() {
+        super();
+    }
+
+    public int getTotalItensVendidos() {
+        return totalItensVendidos;
+    }
+
+    public void setTotalItensVendidos(int totalItensVendidos) {
+        this.totalItensVendidos = totalItensVendidos;
+    }
+
+    public float getComissaoPorItem() {
+        return comissaoPorItem;
+    }
+
+    public void setComissaoPorItem(float comissaoPorItem) {
+        this.comissaoPorItem = comissaoPorItem;
+    }
+
+    public float calcularSalario(){
+        return super.getSalario() + (this.comissaoPorItem * totalItensVendidos);
+    }
+}
